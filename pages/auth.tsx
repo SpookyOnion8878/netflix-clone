@@ -19,7 +19,7 @@ const Auth = () => {
                     </nav>
                     <div className="flex justify-center">
                         <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
-                        <h2 className="text-white text-4xl mb-8 font-semibold">
+                        <h2 className="text-white text-4xl mb-6 font-semibold">
                             {variant == 'login' ? 'Sign in' : 'Register'}
                         </h2>
                         <div className="flex flex-col gap-4">
@@ -49,7 +49,7 @@ const Auth = () => {
                             
                         </div>
 
-                        <button className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition'>
+                        <button className='bg-red-600 py-3 text-white rounded-md w-full mt-8 hover:bg-red-700 transition'>
                             {variant == 'login' ? 'Login' : 'Sign Up'}
                         </button>
 
