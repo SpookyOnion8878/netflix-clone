@@ -1,5 +1,6 @@
-import Input from '@/components/Input'
-import { SetStateAction, useCallback, useState } from 'react';
+import Input from '@/components/Input';
+import axios from 'axios';
+import {  useCallback, useState } from 'react';
 
 const Auth = () => {
     const [email,setEmail] = useState('');
@@ -7,9 +8,25 @@ const Auth = () => {
     const [password,setPassword] = useState('');
 
     const [variant,setVariant] = useState ('login') ;
+
     const toggleVariant = useCallback(()=> {
         setVariant((currentVariant) => currentVariant == 'login' ? 'register' : 'login'  );
-    },[])
+    },[]);
+
+
+    const register = useCallback(async () => {
+        try {
+            await axios.post('/api/register', {
+                email,
+                name,
+                password
+            })          
+        } catch (error) {
+            console.log(error);
+        }
+         
+        }, [email, name, password]);
+
 
     return (
         <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover ">
@@ -23,7 +40,7 @@ const Auth = () => {
                             {variant == 'login' ? 'Sign in' : 'Register'}
                         </h2>
                         <div className="flex flex-col gap-4">
-                        
+                       
                         {   variant == 'register' && ( 
                         <Input 
                             label='Username'
@@ -49,7 +66,7 @@ const Auth = () => {
                             
                         </div>
 
-                        <button className='bg-red-600 py-3 text-white rounded-md w-full mt-8 hover:bg-red-700 transition'>
+                        <button onClick={register} className='bg-red-600 py-3 text-white rounded-md w-full mt-8 hover:bg-red-700 transition'>
                             {variant == 'login' ? 'Login' : 'Sign Up'}
                         </button>
 
