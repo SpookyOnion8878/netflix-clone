@@ -63,7 +63,7 @@ const Auth = () => {
                         <img src="/images/logo.png" alt="logo" className="h-12"/>
                     </nav>
                     <div className="flex justify-center">
-                        <div className="bg-black bg-opacity-70 px-14 py-14 self-center mt-2 lg:w-2/5 lg:max-w-sm rounded-sm w-full">
+                        <div className="bg-black bg-opacity-70 px-14 py-14 self-center mt-2 mb 2 lg:w-2/5 lg:max-w-sm rounded-sm w-full">
                         <h2 className="text-white text-3xl mb-3 font-semibold">
                             {variant == 'login' ? 'Sign in' : 'Register'}
                         </h2>
@@ -98,8 +98,10 @@ const Auth = () => {
                             {variant == 'login' ? 'Login' : 'Sign Up'}
                         </button>
 
-                        <div className='flex flex-row item-center gap-2 mt-4 justify-center'>
-                            <div className='
+                        <div className='flex flex-row item-center gap-2 mt-4 mb-2 justify-center'>
+                            <div 
+                            onClick={() => signIn('google', {callbackUrl: '/'})}
+                            className='
                             w-10
                             h-10
                             bg-white
@@ -114,7 +116,9 @@ const Auth = () => {
                             <FcGoogle size = {30}/>
                             </div>
 
-                            <div className='
+                            <div 
+                            onClick={() => signIn('github', {callbackUrl: '/'})}
+                            className='
                             w-10
                             h-10
                             bg-white
@@ -129,7 +133,7 @@ const Auth = () => {
                             <FaGithub size = {30}/>
                             </div>
                             
-                        </div>
+                    </div>
 
                         <p className='text-neutral-500 mt-12'>
                           { variant == 'login' ? 'First time using Netflix ?' : 'Already have an Account? '}
