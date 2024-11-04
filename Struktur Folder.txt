@@ -1,0 +1,37 @@
+my-cool-project/
+│
+├── backend/                    # Folder Backend
+│   ├── node_modules/           # Modul-dependensi Node.js
+│   ├── src/                    # Sumber Kode Backend
+│   │   ├── controllers/        # Kontroller
+│   │   ├── models/             # Model Data
+│   │   ├── routes/             # Rute API
+│   │   └── app.js              # File Utama
+│   ├── .gitignore              # File Ignore Git
+│   ├── package.json            # Konfigurasi NPM
+│   └── README.md               # Dokumentasi Backend
+│
+├── frontend/                   # Folder Frontend
+│   ├── node_modules/           # Modul-dependensi Node.js
+│   ├── public/                 # File Publik (index.html, gambar, dll.)
+│   ├── src/                    # Sumber Kode Frontend
+│   │   ├── components/         # Komponen React
+│   │   ├── pages/              # Halaman React
+│   │   ├── styles/             # File CSS atau SCSS
+│   │   └── App.js              # Komponen Utama
+│   ├── .gitignore              # File Ignore Git
+│   ├── package.json            # Konfigurasi NPM
+│   └── README.md               # Dokumentasi Frontend
+│
+├── database/                   # Folder Database
+│   ├── backups/                # Cadangan Database
+│   ├── migrations/             # Skrip Migrasi Database
+│   ├── seeds/                  # Data Awal Database
+│   └── README.md               # Dokumentasi Database
+│
+├── .gitignore                  # File Ignore Git
+├── .editorconfig               # Konfigurasi Editor
+├── .env                        # File Environment
+├── README.md                   # Dokumentasi Proyek
+└── .vscode/                    # Konfigurasi VS Code
+    └── settings.json           # Pengaturan Editor
