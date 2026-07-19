@@ -1,5 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// This is your Prisma schema file.
+// Learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
@@ -52,13 +52,15 @@ model Session {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model verificationToken {
+// NOTE: The model name MUST be PascalCase "VerificationToken" for the
+// @next-auth/prisma-adapter to work (the original lowercase name broke the adapter).
+model VerificationToken {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  Identifier String
+  identifier String
   token      String   @unique
   expires    DateTime
 
-  @@unique([Identifier, token])
+  @@unique([identifier, token])
 }
 
 model Movie {

@@ -1,8 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body{
+body {
   @apply bg-zinc-900 h-full overflow-x-hidden;
 }
 
