@@ -1,0 +1,21 @@
+export interface Movie {
+  id: string;
+  title: string;
+  description: string;
+  videoUrl: string;
+  thumbnailUrl: string;
+  genre: string;
+  duration: string;
+}
+
+export interface User {
+  id: string;
+  name: string;
+  image?: string | null;
+  email?: string | null;
+  emailVerified?: string | null;
+  hashedPassword?: string | null;
+  createdAt?: string;
+  updatedAt?: string;
+  favoriteIds?: string[];
+}

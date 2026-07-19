@@ -4,8 +4,8 @@ import prismadb from "@/lib/prismadb";
 import serverAuth from "@/lib/serverAuth";
 
 /**
- * GET /api/random
- * Returns a single random movie from the database. Used by the Billboard hero.
+ * GET /api/movies
+ * Returns every movie in the database, used to populate the home rows.
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "GET") {
@@ -16,9 +16,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     await serverAuth(req);
 
     const movies = await prismadb.movie.findMany();
-    const randomMovie = movies[Math.floor(Math.random() * movies.length)];
 
-    return res.status(200).json(randomMovie);
+    return res.status(200).json(movies);
   } catch (error) {
     console.error(error);
     return res.status(400).end();
